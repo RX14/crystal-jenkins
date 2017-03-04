@@ -5,17 +5,9 @@
 
       "type": "amazon-ebs",
       "ami_name": "jenkins-slave-x86_64-linux-gnu-{{isotime `20060102-1504`}}",
-      "instance_type": "c4.xlarge",
+      "instance_type": "t2.micro",
       "region": "eu-central-1",
       "source_ami": "ami-5900cc36",
-      "launch_block_device_mappings": [
-        {
-          "device_name": "/dev/xvdb",
-          "volume_type": "gp2",
-          "volume_size": 20,
-          "delete_on_termination": true
-        }
-      ],
 
       "communicator": "ssh",
       "ssh_username": "admin"

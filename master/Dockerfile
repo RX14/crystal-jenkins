@@ -1,4 +1,4 @@
-FROM jenkins:2.32.3-alpine
+FROM jenkins:2.46.1-alpine
 
 RUN install-plugins.sh git blueocean ansicolor workflow-aggregator \
     pipeline-stage-view cloudbees-folder ec2

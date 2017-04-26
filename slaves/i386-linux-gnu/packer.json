@@ -1,0 +1,22 @@
+{
+  "builders": [
+    {
+      "name": "i386-linux-gnu",
+
+      "type": "amazon-ebs",
+      "ami_name": "jenkins-slave-i386-linux-gnu-{{isotime `20060102-1504`}}",
+      "instance_type": "t2.micro",
+      "region": "us-east-1",
+      "source_ami": "ami-b14ba7a7",
+
+      "communicator": "ssh",
+      "ssh_username": "admin"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "provision.sh"
+    }
+  ]
+}

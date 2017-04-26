@@ -6,8 +6,8 @@
       "type": "amazon-ebs",
       "ami_name": "jenkins-slave-x86_64-linux-gnu-{{isotime `20060102-1504`}}",
       "instance_type": "t2.micro",
-      "region": "eu-central-1",
-      "source_ami": "ami-5900cc36",
+      "region": "us-east-1",
+      "source_ami": "ami-b14ba7a7",
 
       "communicator": "ssh",
       "ssh_username": "admin"

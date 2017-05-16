@@ -46,3 +46,8 @@ rm -Rf bdwgc
 # Create jenkins workdir
 sudo mkdir /opt/jenkins
 sudo chown admin:admin /opt/jenkins
+
+# Set up swap
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=2097152
+sudo mkswap /swapfile
+echo "/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab

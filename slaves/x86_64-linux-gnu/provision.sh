@@ -19,9 +19,10 @@ sudo apt-get install -y \
     openjdk-7-jre-headless \
     git curl wget \
     build-essential pkg-config automake libtool \
+    crystal \
+    \
     libevent-dev libssl-dev libxml2-dev libyaml-dev libgmp-dev \
     libreadline-dev libbsd-dev libedit-dev libpcre3-dev \
-    crystal \
     llvm-3.8-dev llvm-3.9-dev llvm-4.0-dev
 
 sudo rm -rf /var/lib/apt/lists/*
@@ -45,3 +46,8 @@ rm -Rf bdwgc
 # Create jenkins workdir
 sudo mkdir /opt/jenkins
 sudo chown admin:admin /opt/jenkins
+
+# Set up 2gb swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=2097152
+sudo mkswap /swapfile
+echo "/swapfile none swap defaults 0 0" | sudo tee -a /etc/fstab
